@@ -5,7 +5,8 @@
 # Autor: Ric Neves - Flowgrammers
 # =============================================================================
 
-set -e
+set -euo pipefail
+trap 'echo -e "\n\033[0;31mErro na linha $LINENO. Instalação abortada.\033[0m" >&2' ERR
 
 # Cores
 RED='\033[0;31m'
@@ -147,8 +148,10 @@ echo -e "${BLUE}▶ Instalando comandos slash...${NC}"
 mkdir -p "$COMMANDS_DIR"
 
 if [ -d "$SCRIPT_DIR/commands" ]; then
-  cp -f "$SCRIPT_DIR/commands/"* "$COMMANDS_DIR/" 2>/dev/null || true
-  CMD_COUNT=$(ls "$SCRIPT_DIR/commands/" | wc -l | tr -d ' ')
+  if [ "$(find "$SCRIPT_DIR/commands" -maxdepth 1 -type f | wc -l)" -gt 0 ]; then
+    cp -f "$SCRIPT_DIR/commands/"* "$COMMANDS_DIR/"
+  fi
+  CMD_COUNT=$(find "$SCRIPT_DIR/commands" -maxdepth 1 -type f | wc -l | tr -d ' ')
   echo -e "  ${GREEN}✓${NC} $CMD_COUNT comandos instalados em $COMMANDS_DIR"
 else
   echo -e "  ${YELLOW}⚠${NC}  Pasta commands/ não encontrada — pulando"

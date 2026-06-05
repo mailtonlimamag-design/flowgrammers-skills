@@ -1,0 +1,10 @@
+# Proprietários de código do repositório flowgrammers-skills
+# Todos os PRs requerem aprovação do(s) dono(s) do caminho correspondente
+
+# Regra global — cobre tudo por padrão
+* @mailtonlimamag-design
+
+# Arquivos críticos de infraestrutura requerem revisão explícita
+.github/workflows/ @mailtonlimamag-design
+scripts/           @mailtonlimamag-design
+install.sh         @mailtonlimamag-design
