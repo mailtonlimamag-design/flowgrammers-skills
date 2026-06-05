@@ -1,6 +1,8 @@
 ---
 name: "hard-call"
 description: "/em:hard-call — Framework para Decisões Sem Boas Opções"
+agents:
+  - claude-code
 ---
 
 # /em:hard-call — Framework para Decisões Sem Boas Opções

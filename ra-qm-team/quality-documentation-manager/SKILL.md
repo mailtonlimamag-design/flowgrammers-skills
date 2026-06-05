@@ -14,6 +14,8 @@ triggers:
   - controlled document
   - document master list
   - record retention
+agents:
+  - claude-code
 ---
 
 # Quality Documentation Manager

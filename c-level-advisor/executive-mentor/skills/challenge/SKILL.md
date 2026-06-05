@@ -1,6 +1,8 @@
 ---
 name: "challenge"
 description: "/em:challenge — Análise Pre-Mortem de Planos"
+agents:
+  - claude-code
 ---
 
 # /em:challenge — Análise Pre-Mortem de Planos

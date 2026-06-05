@@ -307,11 +307,11 @@ Todas as skills foram adaptadas para o mercado brasileiro:
 |----------|------------------|
 | **LGPD** | `ra-qm-team/gdpr-dsgvo-expert`, `ra-qm-team/information-security-manager-iso27001` |
 | **PIX** | `business-growth/revenue-operations`, `finance/financial-analyst` |
-| **WhatsApp Business** | `skills-brasileiras/marketing`, `marketing-skill/social-media-manager` |
+| **WhatsApp Business** | `marketing-skill/social-content`, `marketing-skill/social-media-manager` |
 | **NF-e / Fiscal** | `finance/financial-analyst`, `business-growth/revenue-operations` |
 | **CLT / PJ / MEI** | `c-level-advisor/chro-advisor`, `business-growth/contract-and-proposal-writer` |
 | **ANVISA** | `ra-qm-team/fda-consultant-specialist`, `ra-qm-team/regulatory-affairs-head` |
-| **Meta Ads BR** | `marketing-skill/paid-ads`, `skills-brasileiras/marketing` |
+| **Meta Ads BR** | `marketing-skill/paid-ads`, `marketing-skill/social-media-manager` |
 | **Métricas em R$** | `finance/saas-metrics-coach`, `business-growth/revenue-operations` |
 
 ---

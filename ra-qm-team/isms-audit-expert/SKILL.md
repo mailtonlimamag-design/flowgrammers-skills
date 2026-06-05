@@ -11,6 +11,8 @@ triggers:
   - surveillance audit
   - audit finding
   - nonconformity
+agents:
+  - claude-code
 ---
 
 # ISMS Audit Expert

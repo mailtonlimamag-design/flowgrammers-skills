@@ -1,6 +1,8 @@
 ---
 name: "postmortem"
 description: "/em:postmortem — Análise Honesta do que Deu Errado"
+agents:
+  - claude-code
 ---
 
 # /em:postmortem — Análise Honesta do que Deu Errado

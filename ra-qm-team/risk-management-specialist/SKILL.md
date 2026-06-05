@@ -1,6 +1,8 @@
 ---
 name: "risk-management-specialist"
 description: Especialista em gestão de riscos de dispositivos médicos, implementando a ISO 14971 ao longo do ciclo de vida do produto. Fornece análise de riscos, avaliação de riscos, controle de riscos e análise de informações pós-produção. Use quando o usuário mencionar gestão de riscos, ISO 14971, análise de riscos, FMEA, análise de árvore de falhas, identificação de perigos, controle de riscos, matriz de riscos, análise benefício-risco, risco residual, aceitabilidade de riscos ou risco pós-mercado.
+agents:
+  - claude-code
 ---
 
 # Risk Management Specialist

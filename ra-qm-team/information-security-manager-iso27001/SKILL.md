@@ -1,6 +1,8 @@
 ---
 name: "information-security-manager-iso27001"
 description: Implementação de ISMS ISO 27001 e governança de cibersegurança para empresas HealthTech e MedTech. Use para design de ISMS, avaliação de riscos de segurança, implementação de controles, certificação ISO 27001, auditorias de segurança, resposta a incidentes e verificação de conformidade. Cobre ISO 27001, ISO 27002, segurança em saúde e cibersegurança de dispositivos médicos — com foco no mercado brasileiro.
+agents:
+  - claude-code
 ---
 
 # Information Security Manager - ISO 27001

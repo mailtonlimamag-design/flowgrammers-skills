@@ -1,6 +1,8 @@
 ---
 name: "board-prep"
 description: "/em:board-prep — Preparação para Reunião do Conselho"
+agents:
+  - claude-code
 ---
 
 # /em:board-prep — Preparação para Reunião do Conselho

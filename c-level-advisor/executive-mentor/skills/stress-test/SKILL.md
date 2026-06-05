@@ -1,6 +1,8 @@
 ---
 name: "stress-test"
 description: "/em:stress-test — Teste de Estresse de Premissas de Negócio"
+agents:
+  - claude-code
 ---
 
 # /em:stress-test — Teste de Estresse de Premissas de Negócio

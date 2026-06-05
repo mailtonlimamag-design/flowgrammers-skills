@@ -14,6 +14,8 @@ triggers:
   - design control
   - supplier qualification
   - quality records
+agents:
+  - claude-code
 ---
 
 # Quality Manager - QMS ISO 13485 Specialist

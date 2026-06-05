@@ -22,7 +22,7 @@ metadata:
   author: Ric Neves - Flowgrammers
   category: marketing
   domain: demand-generation
-  updated: 2025-01
+  updated: 2025-01-01
 agents:
   - claude-code
 ---
