@@ -12,6 +12,8 @@ triggers:
   - EUDAMED
   - UDI
   - notified body
+agents:
+  - claude-code
 ---
 
 # MDR 2017/745 Specialist

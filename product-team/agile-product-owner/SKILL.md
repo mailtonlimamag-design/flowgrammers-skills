@@ -14,6 +14,8 @@ triggers:
   - user story template
   - sprint capacity
   - velocity tracking
+agents:
+  - claude-code
 ---
 
 # Agile Product Owner

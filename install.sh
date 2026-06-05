@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
 # Flowgrammers Claude Skills — Instalador Automático
-# Versão: 2.0.0
+# Versão: 2.1.0
 # Autor: Ric Neves - Flowgrammers
 # =============================================================================
 
@@ -30,7 +30,7 @@ echo "  ██╔══╝  ██║     ██║   ██║██║██�
 echo "  ██║     ███████╗╚██████╔╝╚███╔███╔╝"
 echo "  ╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝"
 echo -e "${NC}"
-echo -e "${BOLD}  Flowgrammers Claude Skills  v2.0.0${NC}"
+echo -e "${BOLD}  Flowgrammers Claude Skills  v2.1.0${NC}"
 echo -e "  Instalador Automático"
 echo ""
 echo "────────────────────────────────────────────────────"
@@ -109,10 +109,13 @@ mkdir -p "$SKILLS_DIR"
 # Copiar skills (excluindo arquivos desnecessários)
 rsync -a \
   --exclude='.git/' \
+  --exclude='.github/' \
+  --exclude='scripts/' \
   --exclude='*.zip' \
   --exclude='install.sh' \
   --exclude='README.md' \
   --exclude='CLAUDE.md' \
+  --exclude='CONTRIBUTING.md' \
   --exclude='*.pyc' \
   --exclude='__pycache__/' \
   "$SCRIPT_DIR/" "$SKILLS_DIR/" 2>/dev/null || \
@@ -164,7 +167,6 @@ Para usar qualquer skill, peça ao Claude em linguagem natural:
 - project-management/  → PM Sênior, Scrum, Jira, Confluence
 - finance/             → Análise Financeira, SaaS Metrics, Investimentos
 - ra-qm-team/          → LGPD, ISO 13485, ISO 27001, ANVISA, SOC2, CAPA
-- skills-brasileiras/  → Copy, Marketing exclusivo para o Brasil
 EOF
   echo -e "  ${GREEN}✓${NC} CLAUDE.md configurado"
 fi
@@ -210,8 +212,8 @@ Ou simplesmente descreva o que precisa e o Claude irá sugerir a skill adequada.
 - Email Sequence: ~/.claude/skills/marketing-skill/email-sequence/SKILL.md
 
 ## Skills Brasileiras
-- Copy e Conteúdo: ~/.claude/skills/skills-brasileiras/copy-e-conteudo/SKILL.md
-- Marketing BR:    ~/.claude/skills/skills-brasileiras/marketing/SKILL.md
+- Social Content:  ~/.claude/skills/marketing-skill/social-content/SKILL.md
+- Copywriting:     ~/.claude/skills/marketing-skill/copywriting/SKILL.md
 
 ## Product Team
 - Product Manager: ~/.claude/skills/product-team/product-manager-toolkit/SKILL.md
@@ -226,7 +228,7 @@ Ou simplesmente descreva o que precisa e o Claude irá sugerir a skill adequada.
 - Financial Analyst: ~/.claude/skills/finance/financial-analyst/SKILL.md
 
 ## RA/QM Team
-- LGPD Expert:    ~/.claude/skills/ra-qm-team/lgpd-expert/SKILL.md
+- LGPD Expert:    ~/.claude/skills/ra-qm-team/gdpr-dsgvo-expert/SKILL.md
 - Quality Manager: ~/.claude/skills/ra-qm-team/quality-manager-qms-iso13485/SKILL.md
 EOF
 

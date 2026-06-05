@@ -1,6 +1,8 @@
 ---
 name: "gdpr-dsgvo-expert"
 description: Automação de conformidade com LGPD (Lei 13.709/2018), GDPR e DSGVO alemã. Escaneia bases de código em busca de riscos de privacidade, gera documentação DPIA, rastreia solicitações de direitos dos titulares de dados. Use para avaliações de conformidade LGPD/GDPR, auditorias de privacidade, planejamento de proteção de dados, geração de DPIA e gestão de direitos dos titulares de dados — com foco no mercado brasileiro.
+agents:
+  - claude-code
 ---
 
 # LGPD/GDPR/DSGVO Expert

@@ -14,6 +14,8 @@ triggers:
   - regulatory oversight
   - quality culture
   - quality governance
+agents:
+  - claude-code
 ---
 
 # Gerente de Qualidade Sênior — Representante da Direção (QMR)

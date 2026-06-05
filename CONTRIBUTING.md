@@ -53,6 +53,28 @@ Lista de perguntas que essa persona faria
 - Links para skills relacionadas
 ```
 
+#### Campos do frontmatter: obrigatórios vs. recomendados
+
+O template acima é o **ideal completo**. A validação automática (CI) cobra
+apenas o **mínimo obrigatório**, presente em 100% das skills:
+
+| Campo | Status | Regra validada |
+|-------|--------|----------------|
+| `name` | **obrigatório** | minúsculas, números e hífens; igual ao nome da pasta |
+| `description` | **obrigatório** | PT-BR, até 1024 caracteres |
+| `agents` | **obrigatório** | lista contendo `claude-code` |
+| `license` | recomendado | — |
+| `metadata` (`version`, `author`, `category`, `domain`, `updated`) | recomendado | se `updated` existir, deve ser `YYYY-MM-DD` |
+
+Antes de abrir o PR, rode o validador localmente:
+
+```bash
+python3 scripts/validate_skills.py          # valida todas as skills
+python3 scripts/validate_skills.py --counts # confere o catálogo
+```
+
+O mesmo validador roda no GitHub Actions em cada PR (`.github/workflows/`).
+
 ### 3. Regras de qualidade
 
 - **Idioma**: Português do Brasil (PT-BR), sem mistura com inglês no corpo

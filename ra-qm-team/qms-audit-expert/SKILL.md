@@ -12,6 +12,8 @@ triggers:
   - audit finding
   - external audit prep
   - audit schedule
+agents:
+  - claude-code
 ---
 
 # QMS Audit Expert

@@ -2,7 +2,7 @@
 
 > **Biblioteca oficial de skills da Flowgrammers para Claude Code**
 > Autor: Ric Neves - Flowgrammers
-> 239+ skills prontas para produção | Contexto 100% brasileiro | Apenas Claude Code
+> 251 skills prontas para produção | Contexto 100% brasileiro | Apenas Claude Code
 
 ---
 
@@ -27,32 +27,18 @@ Como especialista em SEO, analise meu site para o mercado brasileiro.
 
 ---
 
-## Skills Brasileiras (Exclusivas)
+## Contexto Brasileiro (Embarcado)
 
-### Skills de Copy e Conteúdo (`skills-brasileiras/copy-e-conteudo/`)
-42 skills de copy otimizadas para o mercado brasileiro:
-- Headlines com framework AIDA
-- Hooks para Reels e TikTok
-- Linhas de assunto para email
-- Copy para WhatsApp
-- Títulos para YouTube (CTR alto)
-- Copy para Instagram Stories
-- E mais 36 skills...
-
-### Skills de Marketing (`skills-brasileiras/marketing/`)
-30 skills de marketing focadas no Brasil:
-- Script de venda por WhatsApp
-- Funil de vendas completo
-- Estratégia de tráfego pago (Meta Ads, Google Ads)
-- Proposta comercial B2B
-- Mapeamento de jornada do cliente
-- E mais 25 skills...
+O contexto brasileiro está embarcado em todas as skills (LGPD, PIX, WhatsApp
+Business, NF-e, CLT/PJ/MEI, ANVISA, Meta Ads BR, métricas em R$). As skills de
+copy e marketing focadas no Brasil ficam no domínio `marketing-skill/`. Veja a
+tabela "Contexto Brasileiro nas Skills" mais abaixo para o mapeamento completo.
 
 ---
 
 ## Mapa Completo de Skills
 
-### C-Level Advisory (`c-level-advisor/`) — 34 skills
+### C-Level Advisory (`c-level-advisor/`) — 37 skills
 CEO, CTO, CFO, COO, CPO, CMO, CRO, CISO, CHRO, Executive Mentor
 Chief of Staff (roteador automático), Board Meeting, Decision Logger
 
@@ -62,29 +48,29 @@ Chief of Staff (roteador automático), Board Meeting, Decision Logger
 Tenho uma decisão estratégica: devo abrir capital ou buscar investidor PE?
 ```
 
-### Engineering Avançado (`engineering/`) — 45 skills
+### Engineering Avançado (`engineering/`) — 60 skills
 RAG, MCP Server Builder, CI/CD, Observabilidade, Database Designer, PR Review
 
-### Engineering Team (`engineering-team/`) — 37 skills
+### Engineering Team (`engineering-team/`) — 54 skills
 Senior Frontend (React/Next.js), Senior Backend, Senior DevOps, Senior QA
 Playwright Pro, TDD Guide, Code Reviewer, AWS/GCP/Azure Architect
 
-### Marketing (`marketing-skill/`) — 44 skills
+### Marketing (`marketing-skill/`) — 45 skills
 SEO (tradicional + AI SEO), CRO, Email Marketing, Paid Ads, Growth
 Content Strategy, Analytics, Competitor Analysis
 
-### Product Team (`product-team/`) — 16 skills
+### Product Team (`product-team/`) — 18 skills
 Product Manager (RICE), Agile PO, UX Researcher, UI Design System
 Competitive Teardown, Landing Page Generator, SaaS Scaffolder
 
-### Business Growth (`business-growth/`) — 5 skills
+### Business Growth (`business-growth/`) — 7 skills
 Customer Success Manager, Sales Engineer, Revenue Operations
 Contract & Proposal Writer
 
-### Project Management (`project-management/`) — 9 skills
+### Project Management (`project-management/`) — 10 skills
 Senior PM, Scrum Master, Jira Expert, Confluence Expert
 
-### Finance (`finance/`) — 4 skills
+### Finance (`finance/`) — 6 skills
 Financial Analyst (DCF), SaaS Metrics Coach (ARR/MRR/CAC/LTV), Business Investment Advisor
 
 ### RA/QM Team (`ra-qm-team/`) — 14 skills
@@ -100,11 +86,11 @@ Todas as skills foram adaptadas para o contexto brasileiro:
 |----------|------------------|
 | **LGPD** | ra-qm-team/gdpr-dsgvo-expert, ra-qm-team/information-security-manager-iso27001 |
 | **PIX** | business-growth/revenue-operations, finance/financial-analyst |
-| **WhatsApp Business** | skills-brasileiras/marketing, marketing-skill/email-sequence |
+| **WhatsApp Business** | marketing-skill/social-content, marketing-skill/email-sequence |
 | **NF-e / Fiscal** | finance/financial-analyst, business-growth/revenue-operations |
 | **CLT / PJ / MEI** | c-level-advisor/chro-advisor, business-growth/contract-and-proposal-writer |
 | **ANVISA** | ra-qm-team/fda-consultant-specialist, ra-qm-team/regulatory-affairs-head |
-| **Meta Ads BR** | marketing-skill/paid-ads, skills-brasileiras/marketing |
+| **Meta Ads BR** | marketing-skill/paid-ads, marketing-skill/social-media-manager |
 | **Métricas em R$** | finance/saas-metrics-coach, business-growth/revenue-operations |
 
 ---
@@ -123,4 +109,4 @@ cp -r commands/* ~/.claude/commands/
 Skills criadas e adaptadas pela **Flowgrammers** para o mercado brasileiro.
 - Site: flowgrammers.com
 - Autor: Ric Neves - Flowgrammers
-- Versão: 2.0.0 
+- Versão: 2.1.0

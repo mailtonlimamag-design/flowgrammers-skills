@@ -1,6 +1,8 @@
 ---
 name: "soc2-compliance"
 description: "Use quando o usuário pedir para preparar auditorias SOC 2, mapear Critérios de Serviço de Confiança, construir matrizes de controles, coletar evidências de auditoria, realizar análise de lacunas ou avaliar a prontidão para SOC 2 Tipo I versus Tipo II."
+agents:
+  - claude-code
 ---
 
 # SOC 2 Compliance

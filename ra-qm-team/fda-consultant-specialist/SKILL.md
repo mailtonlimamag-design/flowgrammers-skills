@@ -1,6 +1,8 @@
 ---
 name: "fda-consultant-specialist"
 description: Consultor regulatório FDA para empresas de dispositivos médicos. Fornece orientação sobre vias 510(k)/PMA/De Novo, conformidade QSR (21 CFR 820), avaliações HIPAA e cibersegurança de dispositivos. Use quando o usuário mencionar submissão FDA, 510(k), PMA, De Novo, QSR, pré-mercado, dispositivo predicado, equivalência substancial, HIPAA para dispositivos médicos ou cibersegurança FDA.
+agents:
+  - claude-code
 ---
 
 # FDA Consultant Specialist

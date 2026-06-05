@@ -14,6 +14,8 @@ triggers:
   - regulatory intelligence
   - submission planning
   - notified body
+agents:
+  - claude-code
 ---
 
 # Head of Regulatory Affairs

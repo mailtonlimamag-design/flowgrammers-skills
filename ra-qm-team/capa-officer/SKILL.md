@@ -14,6 +14,8 @@ triggers:
   - quality issue investigation
   - CAPA tracking
   - audit finding CAPA
+agents:
+  - claude-code
 ---
 
 # CAPA Officer
