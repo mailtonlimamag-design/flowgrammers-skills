@@ -10,6 +10,13 @@ Regras:
   A. Toda referência `~/.claude/skills/<caminho>` deve existir no repo.
   B. Todo token entre crases que comece com um domínio conhecido
      (`<dominio>/<...>`) deve existir como arquivo ou pasta no repo.
+  C. Todo link markdown relativo `[texto](caminho)` na documentação
+     curada deve apontar para um arquivo existente.
+
+Nota: por decisão de projeto, os caminhos `references/...` e `scripts/...`
+citados dentro dos SKILL.md são tratados como prosa (gerados sob demanda)
+e NÃO são verificados — por isso a regra C cobre apenas a documentação
+curada (README, CLAUDE.md, CONTRIBUTING.md, commands/), não os SKILL.md.
 
 Uso: python3 scripts/check_doc_refs.py
 Saída: 0 se tudo resolver, 1 se houver referência quebrada.
@@ -44,6 +51,20 @@ DOMAIN_TOKEN_RE = re.compile(
     r"^(?:" + "|".join(re.escape(d) for d in DOMAINS) + r")/[A-Za-z0-9_./-]+$"
 )
 
+# Links markdown: [texto](alvo)
+MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
+# Considera "caminho de arquivo" o que parece um caminho real, evitando
+# placeholders de exemplo como `[texto](url)`.
+PATH_SUFFIXES = (".md", ".html", ".sh", ".py", ".png", ".jpg", ".svg", ".json", ".txt")
+
+
+def looks_like_path(target: str) -> bool:
+    return (
+        target.startswith(("./", "../"))
+        or "/" in target
+        or target.endswith(PATH_SUFFIXES)
+    )
+
 
 def collect_docs() -> list[Path]:
     docs = [ROOT / f for f in DOC_FILES if (ROOT / f).exists()]
@@ -77,6 +98,17 @@ def check_file(path: Path) -> list[str]:
         token = m.group(1).strip().rstrip("/")
         if DOMAIN_TOKEN_RE.match(token) and not repo_path_exists(token):
             errors.append(f"referência inexistente: `{token}`")
+
+    # Regra C: links markdown relativos apontando para arquivos do repo.
+    for m in MD_LINK_RE.finditer(text):
+        target = m.group(1).strip()
+        if target.startswith(("http://", "https://", "mailto:", "tel:", "#")):
+            continue
+        target = target.split("#", 1)[0].split("?", 1)[0].strip()
+        if not target or not looks_like_path(target):
+            continue
+        if not (path.parent / target).exists():
+            errors.append(f"link markdown quebrado: [{target}]")
 
     return errors
 
