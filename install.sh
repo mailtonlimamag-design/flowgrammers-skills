@@ -107,19 +107,36 @@ fi
 mkdir -p "$SKILLS_DIR"
 
 # Copiar skills (excluindo arquivos desnecessários)
-rsync -a \
-  --exclude='.git/' \
-  --exclude='.github/' \
-  --exclude='scripts/' \
-  --exclude='*.zip' \
-  --exclude='install.sh' \
-  --exclude='README.md' \
-  --exclude='CLAUDE.md' \
-  --exclude='CONTRIBUTING.md' \
-  --exclude='*.pyc' \
-  --exclude='__pycache__/' \
-  "$SCRIPT_DIR/" "$SKILLS_DIR/" 2>/dev/null || \
-cp -r "$SCRIPT_DIR/." "$SKILLS_DIR/"
+if command -v rsync &> /dev/null; then
+  rsync -a \
+    --exclude='.git/' \
+    --exclude='.github/' \
+    --exclude='scripts/' \
+    --exclude='*.zip' \
+    --exclude='install.sh' \
+    --exclude='README.md' \
+    --exclude='CLAUDE.md' \
+    --exclude='CONTRIBUTING.md' \
+    --exclude='*.pyc' \
+    --exclude='__pycache__/' \
+    "$SCRIPT_DIR/" "$SKILLS_DIR/"
+else
+  cp -r "$SCRIPT_DIR/." "$SKILLS_DIR/"
+fi
+
+# Garante que arquivos que não são skills fiquem fora de ~/.claude/skills/,
+# independentemente do método de cópia (o fallback cp não aplica excludes).
+rm -rf \
+  "$SKILLS_DIR/.git" \
+  "$SKILLS_DIR/.github" \
+  "$SKILLS_DIR/scripts" \
+  "$SKILLS_DIR/install.sh" \
+  "$SKILLS_DIR/README.md" \
+  "$SKILLS_DIR/CLAUDE.md" \
+  "$SKILLS_DIR/CONTRIBUTING.md"
+find "$SKILLS_DIR" -name '*.zip' -delete 2>/dev/null || true
+find "$SKILLS_DIR" -name '*.pyc' -delete 2>/dev/null || true
+find "$SKILLS_DIR" -type d -name '__pycache__' -exec rm -rf {} + 2>/dev/null || true
 
 INSTALLED_COUNT=$(find "$SKILLS_DIR" -name "SKILL.md" | wc -l | tr -d ' ')
 echo -e "  ${GREEN}✓${NC} $INSTALLED_COUNT skills instaladas em $SKILLS_DIR"
