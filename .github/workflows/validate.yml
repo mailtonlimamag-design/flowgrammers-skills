@@ -59,7 +59,7 @@ jobs:
       # caminhos relativos (esses são cobertos por check_doc_refs.py).
       - name: Links externos (lychee)
         continue-on-error: true
-        uses: lycheeverse/lychee-action@f81b5632d819bfa9954e0c8b1df7e4a1da27f510  # v2.3.0
+        uses: lycheeverse/lychee-action@v2  # SHA pinning requer acesso ao repo externo; Dependabot manterá atualizado
         with:
           args: "--scheme https --scheme http --no-progress ./**/*.md"
           fail: false
