@@ -9,12 +9,13 @@ jobs:
   validate:
     name: Validação estrutural das skills
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b  # v5.3.0
         with:
           python-version: "3.12"
 
@@ -33,9 +34,10 @@ jobs:
   smoke-install:
     name: Smoke test do install.sh
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
       - name: Executar install.sh contra HOME temporário
         run: bash scripts/smoke_install.sh
@@ -43,9 +45,10 @@ jobs:
   lint-docs:
     name: Lint de documentação (informativo)
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683  # v4.2.2
 
       # Informativo: estilo de markdown na documentação curada.
       - name: markdownlint
@@ -56,7 +59,7 @@ jobs:
       # caminhos relativos (esses são cobertos por check_doc_refs.py).
       - name: Links externos (lychee)
         continue-on-error: true
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@v2  # SHA pinning requer acesso ao repo externo; Dependabot manterá atualizado
         with:
           args: "--scheme https --scheme http --no-progress ./**/*.md"
           fail: false

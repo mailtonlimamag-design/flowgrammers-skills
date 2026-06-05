@@ -26,10 +26,23 @@ Com skill:  /read marketing-skill/paid-ads/SKILL.md
 
 ---
 
-## Instalação Rápida (1 comando)
+## Instalação
+
+### Opção 1 — Clone (Recomendada)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ricardonevesbraga/flowgrammers-skills/main/install.sh | bash
+git clone https://github.com/mailtonlimamag-design/flowgrammers-skills.git
+cd flowgrammers-skills
+bash install.sh
+```
+
+### Opção 2 — Script Direto
+
+> **Aviso de segurança:** Este comando baixa e executa um script remoto.
+> Revise o [install.sh](./install.sh) antes de usar em ambientes críticos.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/mailtonlimamag-design/flowgrammers-skills/main/install.sh | bash
 ```
 
 Isso instala tudo automaticamente em `~/.claude/skills/` e `~/.claude/commands/`.
