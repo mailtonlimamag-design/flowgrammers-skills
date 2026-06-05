@@ -66,14 +66,20 @@ apenas o **mínimo obrigatório**, presente em 100% das skills:
 | `license` | recomendado | — |
 | `metadata` (`version`, `author`, `category`, `domain`, `updated`) | recomendado | se `updated` existir, deve ser `YYYY-MM-DD` |
 
-Antes de abrir o PR, rode o validador localmente:
+Antes de abrir o PR, rode as verificações localmente:
 
 ```bash
 python3 scripts/validate_skills.py          # valida todas as skills
 python3 scripts/validate_skills.py --counts # confere o catálogo
+python3 scripts/check_doc_refs.py           # checa referências/links da documentação
+bash    scripts/smoke_install.sh            # testa o install.sh em HOME temporário
 ```
 
-O mesmo validador roda no GitHub Actions em cada PR (`.github/workflows/`).
+As mesmas verificações rodam no GitHub Actions em cada PR
+(`.github/workflows/validate.yml`). São **gates obrigatórios**: validação de
+skills, referências de documentação, shellcheck dos scripts `.sh` e o smoke
+test do instalador. O lint de markdown e a checagem de links externos rodam
+como passos **informativos** (não bloqueiam o merge).
 
 ### 3. Regras de qualidade
 

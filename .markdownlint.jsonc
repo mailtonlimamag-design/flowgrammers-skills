@@ -1,0 +1,15 @@
+{
+  // Config do markdownlint para a documentação curada (informativo no CI).
+  // Regras puramente estilísticas que não agregam neste repositório de
+  // conteúdo ficam desativadas; o foco é estrutura e links.
+  "default": true,
+  "MD013": false,                  // tamanho de linha
+  "MD033": false,                  // HTML inline (badges, etc.)
+  "MD041": false,                  // primeira linha precisa ser heading
+  "MD024": { "siblings_only": true }, // headings repetidos só se irmãos
+  "MD026": false,                  // pontuação no fim de heading
+  "MD036": false,                  // ênfase usada como heading
+  "MD029": false,                  // estilo de prefixo de lista ordenada
+  "MD040": false,                  // linguagem obrigatória em code fence
+  "MD046": false                   // estilo de bloco de código
+}

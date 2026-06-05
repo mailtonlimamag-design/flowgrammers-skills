@@ -24,14 +24,11 @@ jobs:
       - name: Checar referências de documentação
         run: python3 scripts/check_doc_refs.py
 
-      # Informativo: reporta avisos do shellcheck sem bloquear o merge.
-      # Promova para gate obrigatório depois de zerar os avisos do install.sh.
-      - name: ShellCheck no install.sh (informativo)
-        continue-on-error: true
+      - name: ShellCheck (gate obrigatório)
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y shellcheck
-          shellcheck --severity=warning install.sh
+          shellcheck --severity=warning install.sh scripts/*.sh
 
   smoke-install:
     name: Smoke test do install.sh
@@ -42,3 +39,24 @@ jobs:
 
       - name: Executar install.sh contra HOME temporário
         run: bash scripts/smoke_install.sh
+
+  lint-docs:
+    name: Lint de documentação (informativo)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Informativo: estilo de markdown na documentação curada.
+      - name: markdownlint
+        continue-on-error: true
+        run: npx --yes markdownlint-cli2 "README.md" "CLAUDE.md" "CONTRIBUTING.md" "commands/*.md"
+
+      # Informativo: liveness de links externos (http/https). Não checa
+      # caminhos relativos (esses são cobertos por check_doc_refs.py).
+      - name: Links externos (lychee)
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: "--scheme https --scheme http --no-progress ./**/*.md"
+          fail: false
