@@ -100,7 +100,10 @@ def strip_quotes(value: str) -> str:
 
 def is_domain_index(path: Path) -> bool:
     """True para os SKILL.md de indice no topo de cada dominio."""
-    rel = path.relative_to(ROOT)
+    try:
+        rel = path.resolve().relative_to(ROOT)
+    except ValueError:
+        return False
     return len(rel.parts) == 2 and rel.parts[0] in DOMAINS
 
 
