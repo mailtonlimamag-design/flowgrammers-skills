@@ -1,0 +1,77 @@
+{
+  "brand": {
+    "nome": "Nexum Financeiro",
+    "tagline": "Resultados financeiros que transformam negócios.",
+    "posicionamento": "Nexum Financeiro é uma consultoria financeira para pequenas e médias empresas que querem crescer com saúde.",
+    "tom_keywords": [
+      "Claro e preciso",
+      "Baseado em dados",
+      "Sem jargões desnecessários"
+    ],
+    "do_list": [
+      "Claro e preciso",
+      "Baseado em dados",
+      "Sem jargões desnecessários"
+    ],
+    "dont_list": [
+      "Gírias ou abreviações",
+      "Excessos de exclamação",
+      "Linguagem vaga"
+    ],
+    "exemplo_copy": "Nexum Financeiro: Resultados financeiros que transformam negócios."
+  },
+  "design_tokens": {
+    "cores": {
+      "primaria": "#1B2B4B",
+      "secundaria": "#2D3748",
+      "acento": "#38A169",
+      "fundo": "#F9FAFB",
+      "texto": "#111827"
+    },
+    "tipografia": {
+      "titulo": "Inter",
+      "corpo": "Inter"
+    },
+    "mood": [
+      "confiança",
+      "proximidade"
+    ]
+  },
+  "seo": {
+    "title_tag": "Nexum Financeiro | Consultoria Financeira para PMEs",
+    "meta_description": "Consultoria financeira para pequenas e médias empresas que querem crescer com saúde.",
+    "keywords": [
+      "nexum-financeiro",
+      "consultoria financeira pme",
+      "gestao financeira empresas",
+      "saude financeira negocio"
+    ],
+    "citabilidade_frase": "Nexum Financeiro oferece consultoria financeira especializada para pequenas e médias empresas no Brasil."
+  },
+  "estrutura_site": {
+    "secoes": [
+      "hero",
+      "problema",
+      "solucao",
+      "como_funciona",
+      "depoimentos",
+      "numeros",
+      "faq",
+      "cta_final"
+    ]
+  },
+  "dominio": {
+    "nome_negocio": "Nexum Financeiro",
+    "slugs_sugeridos": [
+      "nexumfinanceiro.com.br",
+      "nexumfinanceiro.com",
+      "nexumconsult.com.br",
+      "nexumconsult.com"
+    ]
+  },
+  "ativos_disponiveis": [
+    "logo",
+    "depoimentos",
+    "numeros"
+  ]
+}
