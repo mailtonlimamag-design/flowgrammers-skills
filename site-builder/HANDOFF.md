@@ -66,9 +66,48 @@ Mapa papel → skill existente: ver tabela em `site-builder/orchestrator/SKILL.m
 
 ## Próximos passos
 
-1. **2º spike — qualidade visual premium (prioritário).** Usar o torneio da `agenthub`
-   (3–5 variações, juiz por qualidade) a partir de 1 brief; gerar one-pager + 1 hero
-   premium (Figma/Canva/código) e julgar se passa no "teste Behance".
+### PRIORIDADE: Teste completo end-to-end com o time de especialistas (workflow inteligente)
+
+A próxima sessão deve rodar um **teste completo** (não só um spike isolado) que
+exercite o produto de ponta a ponta com o time abaixo operando num **workflow
+inteligente** (multi-agente), com **modelo certo por tipo de tarefa** e uma
+**rodada obrigatória de validação crítica** (revisão de conteúdo E código) para a
+documentação sair correta e coerente.
+
+**Time de especialistas → skills reais do repo:**
+
+| Especialista | Skills |
+|--------------|--------|
+| Design (UI + marca) | `product-team/ui-design-system`, `marketing-skill/brand-guidelines` |
+| Produto | `product-team/product-manager-toolkit`, `product-team/product-strategist`, `product-team/growth-product-manager` |
+| Engenharia | `engineering-team/senior-frontend`, `engineering-team/senior-backend` |
+| Prompt engineering | `engineering-team/senior-prompt-engineer`, `marketing-skill/prompt-engineer-toolkit`, `engineering/prompt-governance` |
+| AI / LLM | `engineering-team/senior-ml-engineer`, `engineering/llm-cost-optimizer`, `engineering/llm-wiki`, `engineering-team/ai-security` |
+| Advisor executivo (GTM / novos mercados e negócios) | `c-level-advisor/ceo-advisor`, `c-level-advisor/cmo-advisor`, `c-level-advisor/intl-expansion`, `c-level-advisor/scenario-war-room`, `marketing-skill/launch-strategy`, `marketing-skill/marketing-strategy-pmm`, `finance/business-investment-advisor` |
+
+**Orquestração do workflow inteligente:**
+- Usar o **Workflow tool** (orquestração multi-agente) e/ou a `engineering/agenthub`
+  para os passos de variação/torneio. O Workflow tool exige opt-in explícito do
+  fundador — ele já pediu este teste, então vale confirmar o comando ("use um
+  workflow" / "ultracode") ao iniciar.
+- O `site-builder/orchestrator` continua sendo a camada fina que sequencia os papéis
+  e delega aos especialistas e à agenthub.
+
+**Modelo certo por quebra de tarefa (regra):**
+- Raciocínio difícil / arquitetura / estratégia GTM / revisão crítica → modelo mais forte (Opus).
+- Execução (código, copy, tokens de design, geração de páginas) → modelo intermediário (Sonnet).
+- Tarefas simples / mecânicas / alto volume → modelo leve (Haiku).
+
+**Rodada de validação crítica (obrigatória antes de concluir):**
+- Revisão de **conteúdo** (copy, posicionamento, SEO/GEO — coerência e sem invenção).
+- Revisão de **código** (rodar `scripts/validate_skills.py` + `scripts/check_doc_refs.py`;
+  lint; sanidade do gerador).
+- Revisão de **documentação** (handoff e artefatos atualizados, coerentes entre si).
+
+### Outros próximos passos
+
+1. **2º spike — qualidade visual premium.** Torneio da `agenthub` (3–5 variações,
+   juiz por qualidade) a partir de 1 brief; one-pager + 1 hero premium; julgar "teste Behance".
 2. Liberar permissões MCP (Vercel, Figma) e completar deploy + frame + checagem dupla.
 3. Avaliação do PM sobre seguir com o app-web (caso de negócio, custo, complexidade).
 
@@ -103,10 +142,16 @@ de usar.
 > app-web = backlog (PM valida negócio); brief de 8 perguntas; 2 artefatos de aprovação
 > antes do build; nunca inventar contexto.
 >
-> **Meta desta sessão:** rodar o **2º spike — qualidade visual premium** (o risco real):
-> provar geração automática de direção visual que "não parece IA" (nível Behance). Use
-> o torneio da `agenthub` (3–5 variações, juiz por qualidade) a partir de 1 brief,
-> gere one-pager + 1 hero premium e me mostre para julgar. Mantenha a `agenthub` intacta.
+> **Meta desta sessão — TESTE COMPLETO end-to-end com o time, em workflow inteligente:**
+> rode o produto de ponta a ponta exercitando meus especialistas — **design, produto,
+> engenharia, prompt engineering, AI e advisor executivo de GTM/novos mercados e
+> negócios** (mapa especialista→skills no HANDOFF). Orquestre num **workflow inteligente**
+> (Workflow tool multi-agente e/ou `agenthub` para torneios), com **modelo certo por
+> tarefa** (Opus p/ raciocínio difícil/arquitetura/estratégia/revisão crítica; Sonnet
+> p/ execução; Haiku p/ tarefas simples) e **sempre uma rodada de validação crítica**
+> (revisão de conteúdo E código) para a documentação sair correta e coerente. Inclua o
+> 2º spike de qualidade visual premium dentro desse teste. Mantenha a `agenthub` intacta.
+> (O Workflow tool exige opt-in — eu já pedi; confirme comigo "use um workflow/ultracode".)
 >
 > **Regras:** reusar skills, não reinventar; CI verde (rodar `scripts/validate_skills.py`
 > + `scripts/check_doc_refs.py` antes de commitar); commitar no mesmo branch; PR draft.
