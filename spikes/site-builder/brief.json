@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "created_at": "2026-06-21",
+    "spike": "site-builder-e2e",
+    "note": "Brief fictício para validação de encanamento ponta-a-ponta. Sem capricho visual."
+  },
+  "q1_objetivo": "gerar_leads",
+  "q2_frase_negocio": "Consultoria financeira para pequenas e médias empresas que querem crescer com saúde.",
+  "q3_cliente": "b2b_nacional",
+  "q4_personalidade": ["corporativo", "humano"],
+  "q5_tom": {
+    "formalidade": "formal",
+    "seriedade": "serio"
+  },
+  "q6_referencias": [],
+  "q7_ativos": ["logo", "depoimentos", "numeros"],
+  "q8_dominio": {
+    "status": "quero_sugestoes",
+    "nome_negocio": "Nexum Financeiro"
+  }
+}
